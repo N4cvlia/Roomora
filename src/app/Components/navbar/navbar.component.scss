@@ -11,6 +11,7 @@ $primary-font: 'Arial', 'sans-serif', 'helvetica';
     border: 1.5px solid rgba(128, 128, 128, 0.208);
     position: fixed;
     width: 100%;
+    z-index: 1000;
 
     .logo {
         font-size: 1.5rem;

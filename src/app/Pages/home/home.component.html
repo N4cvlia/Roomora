@@ -1,1 +1,78 @@
-<div></div>
+<main>
+    <img src="slide-bg.jpg" alt="" class="MainImage">
+    <section class="MainSection">
+        <section class="rooms">
+            <h2 class="rooms__title">Guests Favorite Rooms</h2>
+            <div class="rooms__grid">
+                @for (item of rooms; track $index) {
+                @if (item.available && $index <= 5) { <div class="room-card">
+                    <img [src]="item.images[0].source" alt="Premium Room" class="room-card__image">
+                    <div class="room-card__info">
+                        <h3 class="room-card__name">{{item.name}}</h3>
+                        <p class="room-card__price">€{{item.pricePerNight}}<span>a night</span></p>
+                    </div>
+            </div>
+            }
+            }
+            </div>
+        </section>
+        <section class="usp">
+            <h2 class="usp__title">USP section</h2>
+            <div class="usp__grid">
+
+                <!-- Beverages -->
+                <div class="usp-card">
+                    <div class="usp-card__icon">
+                        <i class="fa-solid fa-martini-glass"></i>
+                    </div>
+                    <h3 class="usp-card__title">Beverages Included</h3>
+                    <p class="usp-card__text">
+                        Enjoy a complimentary selection of beverages during your stay, from refreshing soft drinks to
+                        signature cocktails.
+                    </p>
+                    <a href="#" class="usp-card__link">Read more <span>›</span></a>
+                </div>
+
+                <!-- Payment -->
+                <div class="usp-card">
+                    <div class="usp-card__icon">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 class="usp-card__title">Stay First, Pay After</h3>
+                    <p class="usp-card__text">
+                        Book with confidence and settle your payment only after your stay—hassle-free and convenient.
+                    </p>
+                    <a href="#" class="usp-card__link">Read more <span>›</span></a>
+                </div>
+
+                <!-- Restaurant -->
+                <div class="usp-card">
+                    <div class="usp-card__icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="usp-card__title">24-Hour Restaurant</h3>
+                    <p class="usp-card__text">
+                        Dine any time of day or night at our 24-hour restaurant, offering international cuisine and
+                        local specialties.
+                    </p>
+                    <a href="#" class="usp-card__link">Read more <span>›</span></a>
+                </div>
+
+                <!-- Spa -->
+                <div class="usp-card">
+                    <div class="usp-card__icon">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="usp-card__title">Spa Included</h3>
+                    <p class="usp-card__text">
+                        Relax and rejuvenate with complimentary access to our luxury spa facilities, designed for your
+                        wellbeing.
+                    </p>
+                    <a href="#" class="usp-card__link">Read more <span>›</span></a>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+</main>

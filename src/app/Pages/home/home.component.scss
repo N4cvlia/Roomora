@@ -1,3 +1,186 @@
-div {
-    height: 1000px;
+$primary-color: #4bbecf;
+$text-color: #333;
+$light-gray: #f8f8f8;
+$primary-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: $text-color;
+}
+
+main {
+    width: 100%;
+}
+.MainSection {
+    margin: 60px 10%;
+    padding: 3rem 1rem;
+}
+
+.MainImage {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.rooms {
+    text-align: center;
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 6rem;
+        position: relative;
+        font-family: $primary-font;
+        color: rgba(94, 94, 94, 0.874);
+        font-weight: 600;
+
+        &::before,
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 30%;
+            height: 2.5px;
+            background: rgba(94, 94, 94, 0.305);
+            margin: 0 15px;
+            vertical-align: middle;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto 80px auto;
+    }
+}
+
+.room-card {
+    background: $light-gray;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__info {
+        padding: 1rem;
+        background: white;
+        text-align: left;
+    }
+
+    &__name {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+        font-family: $primary-font;
+    }
+
+    &__price {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $primary-color;
+
+        span {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: gray;
+            margin-left: 4px;
+        }
+    }
+}
+
+$primary-color: #4bbecf;
+$text-color: #555;
+$title-color: #333;
+
+.usp {
+    text-align: center;
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 6rem;
+        position: relative;
+        font-family: $primary-font;
+        color: rgba(94, 94, 94, 0.874);
+        font-weight: 600;
+
+        &::before,
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 30%;
+            height: 2.5px;
+            background: rgba(94, 94, 94, 0.305);
+            margin: 0 15px;
+            vertical-align: middle;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+.usp-card {
+    text-align: center;
+    padding: 1rem;
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1rem;
+        border: 2px solid $primary-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: $primary-color;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $title-color;
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        font-size: 0.95rem;
+        color: $text-color;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    &__link {
+        font-weight: bold;
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 0.95rem;
+
+        span {
+            margin-left: 4px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
