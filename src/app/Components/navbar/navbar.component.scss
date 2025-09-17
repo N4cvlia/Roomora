@@ -1,6 +1,10 @@
 
 $primary-font: 'Arial', 'sans-serif', 'helvetica';
 
+.Hidden {
+    display: none;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -8,10 +12,11 @@ $primary-font: 'Arial', 'sans-serif', 'helvetica';
     background: #fff;
     padding: 15px 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1.5px solid rgba(128, 128, 128, 0.208);
+    border: 2px solid rgba(128, 128, 128, 0.355);
     position: fixed;
     width: 100%;
     z-index: 1000;
+    background-image: linear-gradient(rgb(255, 255, 255) 39.900002%, rgb(243, 243, 243) 100%);
 
     .logo {
         font-size: 1.5rem;
@@ -39,6 +44,7 @@ $primary-font: 'Arial', 'sans-serif', 'helvetica';
             font-family: $primary-font;
             i {
                 font-size: 1.2rem;
+                margin-right: 5px;
             }
 
             &:hover {
@@ -58,5 +64,28 @@ $primary-font: 'Arial', 'sans-serif', 'helvetica';
         border-radius: 40px;
         left: 0;
         right: 0;
+    }
+}
+
+@media (max-width: 780px) {
+    .nav-btn {
+        span {
+            display: none;
+        }
+    }
+}
+@media (max-width: 630px) {
+    .navbar {
+        justify-content: flex-end;
+        .nav-links {
+            margin: 0;
+        }
+        .nav-btn:not(:last-child) {
+            display: none;
+        }
+        .nav-btn:last-child {
+            display: inline;
+            
+        }
     }
 }

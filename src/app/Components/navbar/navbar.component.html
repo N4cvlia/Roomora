@@ -1,17 +1,20 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
     <div class="logo">Roomora</div>
     <div class="nav-links">
-        <button class="nav-btn active">
+        <button class="nav-btn" routerLink="Home" routerLinkActive="active">
             <i class="fa-solid fa-house-chimney"></i>
-            Home
+            <span>Home</span> 
         </button>
-        <button class="nav-btn">
+        <button class="nav-btn" routerLink="Hotels" routerLinkActive="active">
             <i class="fa-solid fa-hotel"></i>
-            Hotels
+            <span>Hotels</span>
         </button>
-        <button class="nav-btn">
+        <button class="nav-btn" routerLink="Rooms" routerLinkActive="active">
             <i class="fa-solid fa-bed"></i>
-            Rooms
+            <span>Rooms</span>
+        </button>
+        <button class="nav-btn Hidden">
+            <i class="fa-solid fa-bars"></i>
         </button>
     </div>
 </nav>
