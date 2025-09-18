@@ -1,1 +1,45 @@
-<p>rooms works!</p>
+<section class="filter-container">
+    <div class="filter-card">
+        <div class="filter-group">
+            <label>Price Per Night <i class="info">i</i></label>
+            <input type="range" min="0" max="1000" value="500" class="slider" />
+            <div class="price-range">
+                <span>0</span>
+                <span>1000</span>
+            </div>
+        </div>
+    
+        <div class="filter-group">
+            <label>Room Type <i class="info">i</i></label>
+            <select>
+                <option>Select a room</option>
+                <option>Single</option>
+                <option>Double</option>
+                <option>Suite</option>
+            </select>
+        </div>
+    
+        <div class="filter-group">
+            <label>Check-in <i class="info">i</i></label>
+            <input type="date" placeholder="Check-in"/>
+        </div>
+    
+        <div class="filter-group">
+            <label>Check-out <i class="info">i</i></label>
+            <input type="date" title="Check-Out"/>
+        </div>
+    
+        <div class="filter-group">
+            <label>Guests</label>
+            <div class="guests-input">
+                <input type="number" value="1" min="1" />
+                <i class="fa fa-user infield"></i>
+            </div>
+        </div>
+    
+        <div class="filter-actions">
+            <button class="apply">APPLY FILTER</button>
+            <button class="reset">RESET</button>
+        </div>
+    </div>
+</section>

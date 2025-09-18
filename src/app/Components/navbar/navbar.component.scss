@@ -19,8 +19,11 @@ $primary-font: 'Arial', 'sans-serif', 'helvetica';
     background-image: linear-gradient(rgb(255, 255, 255) 39.900002%, rgb(243, 243, 243) 100%);
 
     .logo {
+        display: flex;
+        align-self: center;
+        gap: 5px;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 500;
         color: rgb(255, 56, 92);
         position: absolute;
         left: 20px;
