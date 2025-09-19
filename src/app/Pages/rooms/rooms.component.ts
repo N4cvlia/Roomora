@@ -1,12 +1,49 @@
-import { Component } from '@angular/core';
-
+import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../Services/api.service';
+import { SubjectsService } from '../../Services/subjects.service';
 
 @Component({
   selector: 'app-rooms',
-  imports: [],
+  imports: [ReactiveFormsModule, FormsModule, NgxSliderModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit{
+  public rooms: any;
+  public minRange: number = 10;
+  public maxRange: number = 1000;
+  public rangeStep: number = 10;
 
+  public minVal: number = 100;
+  public maxVal: number = 900;
+
+  options: Options = {
+    floor: 50,
+    ceil: 1000,
+  };
+
+  public filter: FormGroup = new FormGroup({
+    roomTypeId: new FormControl(""),
+    priceFrom: new FormControl(0),
+    priceTo: new FormControl(1000),
+    checkInTime: new FormControl('yyyy-MM-dd'),
+    checkOutTime: new FormControl('yyyy-MM-dd'),
+    maxsimumGuests: new FormControl(1),
+  })
+  constructor(private api: ApiService, private subjects: SubjectsService) {}
+
+  ngOnInit(): void {
+    if(this.subjects.roomsCache.value.length > 0) {
+      this.rooms = this.subjects.roomsCache.value
+    }else {
+      this.api.GetAllRooms().subscribe( (data:any) => {
+        this.rooms = data;
+        console.log(data);
+        this.subjects.roomsCache.next(data)
+      })
+    }
+  }
 }

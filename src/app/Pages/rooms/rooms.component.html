@@ -1,38 +1,41 @@
 <section class="filter-container">
-    <div class="filter-card">
+    <form [formGroup]="filter"  class="filter-card">
+    
         <div class="filter-group">
             <label>Price Per Night <i class="info">i</i></label>
-            <input type="range" min="0" max="1000" value="500" class="slider" />
+            <div class="range-input">
+                <ngx-slider [(value)]="minVal" [(highValue)]="maxVal" [options]="options"></ngx-slider>
+            </div>
             <div class="price-range">
-                <span>0</span>
-                <span>1000</span>
+                    <input type="number" class="input-min" [value]="minVal" [min]="minRange" [max]="maxRange" formControlName="priceFrom">
+                    <input type="number" class="input-max" [value]="maxVal" [min]="minRange" [max]="maxRange" formControlName="priceTo">
             </div>
         </div>
     
         <div class="filter-group">
             <label>Room Type <i class="info">i</i></label>
-            <select>
-                <option>Select a room</option>
-                <option>Single</option>
-                <option>Double</option>
-                <option>Suite</option>
+            <select formControlName="roomTypeId">
+                <option value="" selected disabled>Select a room</option>
+                <option value="1">Single</option>
+                <option value="2">Double</option>
+                <option value="3">Deluxe</option>
             </select>
         </div>
     
         <div class="filter-group">
             <label>Check-in <i class="info">i</i></label>
-            <input type="date" placeholder="Check-in"/>
+            <input type="date" formControlName="checkInTime"/>
         </div>
     
         <div class="filter-group">
             <label>Check-out <i class="info">i</i></label>
-            <input type="date" title="Check-Out"/>
+            <input type="date" formControlName="checkOutTime" placeholder="hey"/>
         </div>
     
         <div class="filter-group">
             <label>Guests</label>
             <div class="guests-input">
-                <input type="number" value="1" min="1" />
+                <input type="number" value="1" min="1" formControlName="maxsimumGuests" />
                 <i class="fa fa-user infield"></i>
             </div>
         </div>
@@ -41,5 +44,24 @@
             <button class="apply">APPLY FILTER</button>
             <button class="reset">RESET</button>
         </div>
+    
+</form>
+</section>
+<section class="rooms-container">
+    <h2 class="rooms-container__title">Availabe Rooms</h2>
+    <div class="rooms-container__grid">
+        @for (room of rooms; track $index) {
+            <div class="room-card">
+                <img 
+                    [src]="room.images[0].source"
+                    alt="Premium Room"
+                    class="room-card__image"
+                    >
+                <div class="room-card__info">
+                    <h3 class="room-card__name">{{room.name}}</h3>
+                    <p class="room-card__price">€{{room.pricePerNight}}<span>a night</span></p>
+                </div>
+            </div>
+        }
     </div>
 </section>

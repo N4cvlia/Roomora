@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../Services/api.service';
 import { RouterLink } from '@angular/router';
+import { SubjectsService } from '../../Services/subjects.service';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +11,15 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  public rooms: any;
-
-  constructor(private Api: ApiService) { }
+  constructor(private Api: ApiService, private subjects: SubjectsService) { }
 
   ngOnInit(): void {
-    this.Api.GetAllRooms().subscribe((res) => {
-      console.log(res);
-      this.rooms = res;
+    this.Api.GetAllRooms().subscribe((res: any) => {
+      this.subjects.roomsCache.next(res);
     });
+    this.Api.GetAllHotels().subscribe((res: any) => {
+      this.subjects.hotelsCache.next(res);
+    })
   }
 
 }
