@@ -4,7 +4,7 @@
         <div class="filter-group">
             <label>Price Per Night <i class="info">i</i></label>
             <div class="range-input">
-                <ngx-slider [(value)]="minVal" [(highValue)]="maxVal" [options]="options"></ngx-slider>
+                <ngx-slider [(value)]="minVal" [(highValue)]="maxVal" [options]="options" (userChangeEnd)="onSliderChange($event)"></ngx-slider>
             </div>
             <div class="price-range">
                     <input type="number" class="input-min" [value]="minVal" [min]="minRange" [max]="maxRange" formControlName="priceFrom">
@@ -35,14 +35,20 @@
         <div class="filter-group">
             <label>Guests</label>
             <div class="guests-input">
-                <input type="number" value="1" min="1" formControlName="maxsimumGuests" />
+                <select formControlName="maxsimumGuests" id="">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                </select>
                 <i class="fa fa-user infield"></i>
             </div>
         </div>
     
         <div class="filter-actions">
-            <button class="apply">APPLY FILTER</button>
-            <button class="reset">RESET</button>
+            <button class="apply" (click)="applyFilter()">APPLY FILTER</button>
+            <button class="reset" (click)="resetFilter()">RESET</button>
         </div>
     
 </form>
@@ -51,7 +57,7 @@
     <h2 class="rooms-container__title">Availabe Rooms</h2>
     <div class="rooms-container__grid">
         @for (room of rooms; track $index) {
-            <div class="room-card">
+            <div class="room-card" (click)="GoToDetails(room.id)">
                 <img 
                     [src]="room.images[0].source"
                     alt="Premium Room"

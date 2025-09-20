@@ -9,6 +9,6 @@ export const routes: Routes = [
         loadComponent: () => import('./Pages/rooms/rooms.component').then(m => m.RoomsComponent),
     },
     {path: 'Hotels', loadComponent: () => import('./Pages/hotels/hotels.component').then(m => m.HotelsComponent)},
-    {path: 'Details', loadComponent: () => import('./Pages/details/details.component').then(m => m.DetailsComponent)},
+    {path: 'Rooms/:id', loadComponent: () => import('./Pages/details/details.component').then(m => m.DetailsComponent)},
     {path: '**', redirectTo: 'Home'}
 ];
