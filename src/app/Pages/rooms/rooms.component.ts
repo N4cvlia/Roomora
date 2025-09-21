@@ -45,6 +45,7 @@ export class RoomsComponent implements OnInit{
         this.subjects.roomsCache.next(data)
       })
     }
+    window.scrollTo(0,0);
   }
   applyFilter() {
     this.api.GetFilteredRooms(this.filter.value).subscribe( (data:any) => {

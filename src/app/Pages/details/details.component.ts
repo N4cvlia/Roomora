@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit{
+  constructor() { }
+
+  ngOnInit(): void {
+    window.scrollTo(0,0);
+  }
 
 }

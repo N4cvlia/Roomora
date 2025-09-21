@@ -23,6 +23,7 @@ export class HotelsComponent implements OnInit{
         this.subjects.hotelsCache.next(data)
       })
     }
+    window.scrollTo(0,0);
   }
 
   GoToHotel(id: number) {

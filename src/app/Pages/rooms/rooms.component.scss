@@ -214,6 +214,7 @@ $primary-color: #4bbecf;
     text-align: center;
     min-height: 600px;
     border-top: 2px solid rgba(128, 128, 128, 0.131);
+    padding: 30px;
 
     &__title {
         font-size: 1.5rem;
@@ -290,7 +291,14 @@ $primary-color: #4bbecf;
         }
     }
 }
-@media (max-width: 1011px) {
+@media (max-width: 1110px) {
+    .rooms-container {
+        &__grid {
+            grid-template-columns: repeat(2, minmax(280px, 1fr));
+        }
+    }
+}
+@media (max-width: 1035px) {
     .rooms-container {
         &__title {
             &::before,
@@ -298,5 +306,77 @@ $primary-color: #4bbecf;
                 width: 18%;
             }
         }
+    }
+    .filter-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 70%;
+    min-width: 500px;
+
+    .filter-group {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+
+            label{
+                font-size: 13px;
+                align-self: flex-start;
+            }
+            &:nth-child(1) {
+                label{
+                    align-self: center;
+                }
+            }
+            .range-input {
+                width: 90%;
+            }
+
+            select,
+            input[type="date"] {
+                width: 100%;
+                min-width: 200px;
+            }
+    
+            .guests-input {
+                width: 100%;
+                select {
+                    width: 100%;
+                }
+            }
+        }
+    
+        .filter-actions {
+            gap: 1rem;
+            width: 100%;
+            margin-top: 10px;
+            button {
+                padding: 0.5rem 0.8rem;
+                font-size: 13px;
+            }
+        }
+    }
+}
+@media (max-width: 650px) {
+    .rooms-container {
+        padding: 20px;
+        &__title {
+            font-size: 1.3rem;
+
+            &::before,
+            &::after {
+                width: 12%;
+                margin: 0 8px;
+            }
+        }
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+    .filter-card {
+        width: 100%;
+        min-width: auto;
     }
 }
