@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./Components/navbar/navbar.component";
 import { FooterComponent } from "./Components/footer/footer.component";
@@ -9,7 +9,8 @@ import { LoaderComponent } from './Components/loader/loader.component';
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent, LoaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent implements OnInit{
   title = 'Roomora';

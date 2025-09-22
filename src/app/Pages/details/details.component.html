@@ -1,1 +1,103 @@
-<p>details works!</p>
+<div class="room-details-page">
+    <div class="room-top">
+        <!-- Room Image + Carousel -->
+        <div class="room-gallery">            
+            
+            <swiper-container navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
+                @for (item of imageArray; track $index) {
+                    <swiper-slide>
+                        <img [src]="item.image" alt="Room Image" />
+                    </swiper-slide>
+                }
+            </swiper-container>
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- Reservation Card -->
+        <div class="reservation-card">
+            <h2 class="title">Reservation</h2>
+            <p class="price">
+                Premium Room <span class="amount">€ {{details.pricePerNight}} -</span> <span class="night">a night</span>
+            </p>
+
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label>Check-in <i class="info">i</i></label>
+                    <input type="date" placeholder="Check-in" />
+                </div>
+
+                <div class="form-group">
+                    <label>Check-out <i class="info">i</i></label>
+                    <input type="date" placeholder="Check-out" />
+                </div>
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" placeholder="Please enter your name" />
+                </div>
+
+                <div class="form-group">
+                    <label>Customer Tel:Phone</label>
+                    <input type="tel" placeholder="Please enter your phone number" />
+                </div>
+
+                <button type="submit" class="btn">BOOK NOW</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Room Details + Overview -->
+    <div class="room-info">
+        <div class="info-block">
+            <h3>Room Details</h3>
+            <div class="table-overview">
+                <div>✔ Double Bed</div>
+                <div>✔ Free Internet</div>
+                <div>✔ Free Newspaper</div>
+                <div>✔ 60 square meter</div>
+                <div>✔ Beach view</div>
+                <div>✔ 2 persons</div>
+                <div>✔ Double Bed</div>
+                <div>✔ Free Internet</div>
+                <div>✔ Breakfast included</div>
+                <div>✔ Private Balcony</div>
+                <div>✔ Flat Screen TV</div>
+                <div>✔ Jacuzzi</div>
+            </div>
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum nibh...
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h3>Overview</h3>
+            <div class="tabs">
+                <span class="active">Overview</span>
+                <span>Facilities</span>
+                <span>Extra</span>
+            </div>
+            <div class="tab-content">
+                <p>
+                    Lorem ipsum dolor sit amet, suspendisse interdum eleifend augue...
+                </p>
+                <img src="" alt="Food" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Rooms -->
+    <div class="other-rooms">
+        <h3>Other rooms</h3>
+        <div class="room-list">
+            <div class="room-card"><img src="" alt="" /></div>
+            <div class="room-card"><img src="" alt="" /></div>
+            <div class="room-card"><img src="" alt="" /></div>
+        </div>
+    </div>
+</div>

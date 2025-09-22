@@ -20,4 +20,7 @@ export class ApiService {
   GetHotelRoomsById(id: number) {
    return this.http.get(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${id}`)
   }
+  GetRoomById(id: number) {
+    return this.http.get(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`)
+  }
 }
