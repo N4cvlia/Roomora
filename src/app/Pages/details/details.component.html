@@ -3,27 +3,25 @@
         <!-- Room Image + Carousel -->
         <div class="room-gallery">            
             
-            <swiper-container navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
+            <swiper-container 
+                rewind="true" navigation="true" pagination="true"
+                pagination-clickable="true" keyboard="true"
+                mousewheel="true" css-mode="true"
+                autoplay-delay="5000" autoplay-disable-on-interaction="true"
+                >
                 @for (item of imageArray; track $index) {
                     <swiper-slide>
                         <img [src]="item.image" alt="Room Image" />
                     </swiper-slide>
                 }
             </swiper-container>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
         </div>
 
         <!-- Reservation Card -->
         <div class="reservation-card">
             <h2 class="title">Reservation</h2>
             <p class="price">
-                Premium Room <span class="amount">€ {{details.pricePerNight}} -</span> <span class="night">a night</span>
+                Premium Room <span class="amount">€ {{details.pricePerNight}} </span> <span class="night">a night</span>
             </p>
 
             <form class="reservation-form">

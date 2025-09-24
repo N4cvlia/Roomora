@@ -82,27 +82,6 @@ $primary-color: #4bbecf;
             cursor: pointer;
         }
         
-        // input[type="range"] {
-        //     width: 180px;
-        //     -webkit-appearance: none;
-        //     appearance: none;
-        //     height: 4px;
-        //     background: #ccc;
-        //     border-radius: 2px;
-        //     outline: none;
-
-        //     &::-webkit-slider-thumb {
-        //         -webkit-appearance: none;
-        //         appearance: none;
-        //         width: 16px;
-        //         height: 16px;
-        //         border-radius: 50%;
-        //         background: #58c1d5;
-        //         cursor: pointer;
-        //         border: 1px solid #aaa;
-        //     }
-        // }
-        
         .price-range {
             display: flex;
             justify-content: space-between;

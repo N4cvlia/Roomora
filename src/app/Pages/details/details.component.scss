@@ -1,8 +1,5 @@
-swiper-container {
-    width: 500px;
-    height: 500px;
-  }
-
+  $primary-font: open-sans, sans-serif;
+  
   swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -10,13 +7,14 @@ swiper-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 6px;
   }
-
   swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 6px;
   }
 .room-details-page {
     padding: 30px;
@@ -29,32 +27,54 @@ swiper-container {
 
         .room-gallery {
             flex: 2;
+            min-width: 0;
 
-            img {
+            swiper-container {
                 width: 100%;
-                border-radius: 6px;
-            }
-
-            .carousel-dots {
-                text-align: center;
-                margin-top: 10px;
-
-                .dot {
+                height: 500px;
+                max-width: 100%;
+                display: block;
+               
+                &::part(bullet) {
+                    background-color: transparent;
+                    opacity: 1;
+                    border: 1.5px solid white;
                     height: 10px;
                     width: 10px;
-                    border-radius: 50%;
-                    display: inline-block;
-                    background: #ccc;
-                    margin: 0 4px;
-
-                    &.active {
-                        background: #555;
-                    }
                 }
+                &::part(bullet-active) {
+                    background-color: white;
+                    opacity: 1;
+                    border: 1.5px solid white;
+                    height: 10px;
+                    width: 10px;
+                }
+                &::part(button-prev) {
+                    --swiper-navigation-size: 25px !important;
+                    width: 40px;
+                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    padding: 20px;                    
+                }
+                &::part(button-next) {
+                    --swiper-navigation-size: 25px !important;  
+                    width: 40px;
+                    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    padding: 20px;                 
+                }
+                --swiper-navigation-color: #ffffff73;
             }
         }
 
         .reservation-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             flex: 1;
             background: #fff;
             padding: 20px;
@@ -63,12 +83,27 @@ swiper-container {
             border: 1px solid #ddd;
 
             .title {
-                margin-bottom: 10px;
+                    margin: 0px 0px 10px 0px;
+                    width: 100%;
+                    text-align: center;
+                    font-family: $primary-font;
+                    &::before,
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 10%;
+                        height: 2.5px;
+                        background: rgba(94, 94, 94, 0.305);
+                        margin: 0 15px;
+                        vertical-align: middle;
+                    }
             }
 
             .price {
                 font-size: 16px;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-family: $primary-font;
 
                 .amount {
                     color: #009688;
@@ -82,11 +117,14 @@ swiper-container {
 
             .form-group {
                 margin-bottom: 15px;
+                
 
                 label {
                     display: block;
                     margin-bottom: 5px;
-                    font-weight: 500;
+                    font-weight: 400;
+                    font-family: $primary-font;
+                    font-size: 15px;
                 }
                     .info {
                         font-style: normal;
