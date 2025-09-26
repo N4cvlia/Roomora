@@ -23,4 +23,7 @@ export class ApiService {
   GetRoomById(id: number) {
     return this.http.get(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`)
   }
+  Booking(body: any) {
+    return this.http.post('https://hotelbooking.stepprojects.ge/api/Booking', body)
+  }
 }
