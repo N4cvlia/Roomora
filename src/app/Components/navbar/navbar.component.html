@@ -15,9 +15,26 @@
             <i class="fa-solid fa-bed"></i>
             <span>Rooms</span>
         </button>
-        <button class="nav-btn Hidden">
+        <button class="nav-btn Hidden" (click)="BurgerDrop($event)">
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
 </nav>
+<div class="burgerDropdown" 
+[style.transform]="burgerVisib ? 'scaleY(1)' : 'scaleY(0)'"
+[style.top]="isScrolled ? '80px' : '78px'"
+#BurgerDropdown>
+    <button class="burgerBtns" routerLink="Home" routerLinkActive="active" (click)="BurgerClose()" [style.padding]="isScrolled ? '20px 25px' : '15px 25px'">
+        <i class="fa-solid fa-house-chimney"></i>
+        <span>Home</span> 
+    </button>
+    <button class="burgerBtns" routerLink="Hotels" routerLinkActive="active" (click)="BurgerClose()">
+        <i class="fa-solid fa-hotel"></i>
+        <span>Hotels</span>
+    </button>
+    <button class="burgerBtns" routerLink="Rooms" routerLinkActive="active" (click)="BurgerClose()">
+        <i class="fa-solid fa-bed"></i>
+        <span>Rooms</span>
+    </button>
+</div>
   
