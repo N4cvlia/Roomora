@@ -3,6 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+input, textarea, select {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  input[type="date"] {
+    &::-webkit-date-and-time-value {
+      line-height: inherit;
+      padding: 0;
+      margin: 0;
+    }
+  }
 .ngx-slider .ngx-slider-floor{
     display: none !important;
 }
