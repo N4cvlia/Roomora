@@ -12,11 +12,18 @@ input, textarea, select {
       outline: none;
     }
   }
-  input[type="date"] {
+  input[type="date"],
+  input[type="datetime-local"] {
+    -webkit-appearance: none;
+    background-color: #fff !important;
+    font-size: 14px;
     &::-webkit-date-and-time-value {
       line-height: inherit;
       padding: 0;
       margin: 0;
+    }
+    &:focus {
+        background-color: #fff !important;
     }
   }
 .ngx-slider .ngx-slider-floor{
